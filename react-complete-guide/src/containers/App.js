@@ -51,7 +51,7 @@ class App extends Component {
       persons =
         < Persons
           persons={this.state.persons}
-          click={this.deletePersonHandler}
+          clicked={this.deletePersonHandler}
           changed={this.nameChangedHandler}
         ></Persons>
     }
