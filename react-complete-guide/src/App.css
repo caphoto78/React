@@ -10,7 +10,7 @@
 .bold {
   font-weight: bold;
 }
-.button {
+.Button {
   background-color: green;
   color: white;
   font: inherit;
@@ -20,7 +20,7 @@
   transition: all .250s ease;
 }
 
-.button:hover {
+.Button:hover {
   background-color: lightgreen;
   color: black;
 }
