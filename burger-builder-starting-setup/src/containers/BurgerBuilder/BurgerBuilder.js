@@ -47,53 +47,6 @@ class BurgerBuilder extends Component {
     return sum > 0;
   }
 
-  // addIngredientHandler = (type) => {
-
-  //   // update the ingredients
-  //   const oldCount = this.state.ingredients[type]
-  //   const updatedCount = oldCount + 1
-  //   const updatedIngredients = {
-  //     ...this.state.ingredients
-  //   }
-  //   updatedIngredients[type] = updatedCount
-
-  //   // update the price
-  //   const priceAddition = INGREDIENT_PRICES[type];
-  //   const oldPrice = this.state.totalPrice;
-  //   const newPrice = oldPrice + priceAddition;
-
-  //   // update the state
-  //   this.setState({
-  //     totalPrice: newPrice,
-  //     ingredients: updatedIngredients
-  //   })
-  //   this.updatePurchaseState(updatedIngredients);
-  // }
-  // removeIngredientHandler = (type) => {
-  //   // update the ingredients
-  //   let oldCount = this.state.ingredients[type];
-  //   if (oldCount <= 0) {
-  //     return
-  //   }
-  //   const updatedCount = oldCount - 1
-  //   const updatedIngredients = {
-  //     ...this.state.ingredients
-  //   }
-  //   updatedIngredients[type] = updatedCount
-
-  //   // update the price
-  //   const priceDeduction = INGREDIENT_PRICES[type];
-  //   const oldPrice = this.state.totalPrice;
-  //   const newPrice = oldPrice - priceDeduction;
-
-  //   // update the state
-  //   this.setState({
-  //     totalPrice: newPrice,
-  //     ingredients: updatedIngredients
-  //   })
-  //   this.updatePurchaseState(updatedIngredients);
-  // }
-
   purchaseCancelHandler = () => {
     this.setState({
       purchasing: false
@@ -101,41 +54,7 @@ class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
-    // alert('You Continue!');
-    // this.setState({ loading: true })
-    // const order = {
-    //   ingredients: this.state.ingredients,
-    //   price: this.state.totalPrice, //in real app this in calculated tp the server
-    //   customer: {
-    //     name: 'Constantin Antochi',
-    //     address: {
-    //       street: 'Test Street nr. 69',
-    //       zipCode: '077025',
-    //       country: 'Romania'
-    //     },
-    //     email: 'test@test.com'
-    //   },
-    //   deliveryMethod: 'fastest'
-    // }
-    // axios.post('/orders.json', order)
-    //   .then(response => {
-    //     this.setState({ loading: false, purchasing: false });
-    //   })
-    //   .catch(err => {
-    //     this.setState({ loading: false, purchasing: false });
-    //   })
-
-    const queryParams = [];
-    for (let i in this.state.ingredients) {
-      queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
-    }
-    queryParams.push('price=' + this.props.price);
-    const queryString = queryParams.join('&');
-
-    this.props.history.push({
-      pathname: '/checkout',
-      search: '?' + queryString
-    });
+    this.props.history.push('/checkout');
   }
 
   render() {
