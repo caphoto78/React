@@ -11,6 +11,7 @@ const ExpenseItem = (props) => {
 			<div className={styles.ExpenseItem__description}>
 				<h2>{props.title}</h2>
 				<div className={styles.ExpenseItem__price}>{props.amount}</div>
+				<button>Change Title</button>
 			</div>
 		</Card>
 	)
