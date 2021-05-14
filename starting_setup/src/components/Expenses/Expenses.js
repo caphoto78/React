@@ -1,7 +1,7 @@
 import React from 'react'
-import ExpenseItem from '../ExpenseItem/ExpenseItem'
+import ExpenseItem from './ExpenseItem/ExpenseItem'
 import styles from './Expenses.module.css'
-import Card from '../Card/Card'
+import Card from '../../components/Card/Card'
 
 const Expenses = (props) => {
   const expenseItems = props.expenses.map((expenseItem, index) => {
