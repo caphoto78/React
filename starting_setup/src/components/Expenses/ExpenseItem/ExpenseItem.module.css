@@ -23,6 +23,7 @@
   flex: 1;
   margin: 0 1rem;
   color: white;
+  text-align: left;
 }
 
 .ExpenseItem__price {
